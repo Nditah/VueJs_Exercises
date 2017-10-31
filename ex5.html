@@ -11,8 +11,13 @@
 
 <body>
 	<div id="root" >
-		<input type="text" id="input" v-model="message" /> 
-		<p> The value of the input is: <b> {{ message }} </b> How cool is that! </p>
+	
+		<input type="text" id="input" v-model="newName" /> 
+		<button v-on:click="addName"> Add Name </button>
+		
+		<ul> Names of my friends 
+			<li v-for="name in names" v-text="name"> </li> 
+		</ul>
 	
 	
 	</div>
@@ -21,12 +26,24 @@
 		<script src="vue.js"></script>
 		<script>
  		
-		new Vue({
+		var app = new Vue({
 			el: '#root',
 			data: {
+					newName: '',
+					names : ['Ruth', 'Olivia', 'Albert', 'Christine', 'Soso' ] ,
 					message : 'Hello World'  
 				} 		
+				
+			methods:{
+				addName(){
+				this.names.push(this.newName);
+				}
+ 		
+			}
 		})		
+
+
+		});
 		</script>
 		
 		

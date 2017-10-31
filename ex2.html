@@ -3,29 +3,35 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Exercise 2</title>
+    <title>Exercise 3</title>
     <meta name="description" content="The HTML5 Standard Template">
     <meta name="author" content="Developer Name">
- 
-
+<!---->
 </head>
 
 <body>
-	<div id="app">
-	Show here:	{{ message }}
-	</div> 		
-
-		<script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>  
+	<div id="root" >
+		<input type="text" id="input" v-model="message" /> 
+		<p> The value of the input is: <b> {{ message }} </b> How cool is that! </p>
+	
+	
+	</div>
+	
+		
+		<script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script> 
 		<script>
- 		
+		let data = {
+			message : 'Hello World'  
+		} ;
+		
 		new Vue({
-			el: '#app',
-			data: {
-					message : 'Hello World'  
-				} 		
+			el: '#root',
+			data: data		
 		})		
 		</script>
 		
+		
+ 
 </body>
 
 </html>
