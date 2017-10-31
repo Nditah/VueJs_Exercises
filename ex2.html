@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exercise 2</title>
+    <meta name="description" content="The HTML5 Standard Template">
+    <meta name="author" content="Developer Name">
+ 
+
+</head>
+
+<body>
+	<div id="app">
+	Show here:	{{ message }}
+	</div> 		
+
+		<script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>  
+		<script>
+ 		
+		new Vue({
+			el: '#app',
+			data: {
+					message : 'Hello World'  
+				} 		
+		})		
+		</script>
+		
+</body>
+
+</html>

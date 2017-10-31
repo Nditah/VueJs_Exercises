@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exercise 3</title>
+    <meta name="description" content="The HTML5 Standard Template">
+    <meta name="author" content="Developer Name">
+<!---->
+</head>
+
+<body>
+	<div id="root" >
+		<input type="text" id="input" v-model="message" /> 
+		<p> The value of the input is: <b> {{ message }} </b> How cool is that! </p>
+	
+	
+	</div>
+	
+		
+		<script src="../vue/vue.js"></script>
+		<script>
+		let data = {
+			message : 'Hello World'  
+		} ;
+		
+		new Vue({
+			el: '#root',
+			data: data		
+		})		
+		</script>
+		
+		
+ 
+</body>
+
+</html>
