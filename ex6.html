@@ -3,19 +3,26 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Exercise 5</title>
+	<title>Exercise 6</title>
 	<meta name="description" content="The HTML5 Standard Template">
 	<meta name="author" content="Developer Name">
-	<!---->
+    <!---->
+    
+    <style>
+        .color-red { color:rgb(212, 40, 40); }
+        .color-blue { color:rgb(78, 14, 196); }
+        .is-loading { background:rgba(66, 196, 14, 0.555); }
+        
+    </style>
 </head>
 
 <body>
 	<div id="root">
-
+        <h1 :class="className"> I love Vue with Vs Code </h1>
 		<input type="text" id="input" v-model="newName" />
-		<button v-on:click="addName"> Add Name </button>
-		<!--  v-on:click="addName"  is same as   @click="addName" -->
-
+		<button :class="{ 'is-loading':isLoading }" @click="toggleClass" > Click Me </button>
+		<button @click="addName" v-bind:title="title"> Add Name </button>
+        
 		<ul> Names of my friends
 			<li v-for="name in names" v-text="name"> </li>
 		</ul>
@@ -30,6 +37,9 @@
 		var app = new Vue({
 			el: '#root',
 			data: {
+				isLoading: false,
+				className: 'color-blue',
+                title: 'Button Title',
 				newName: '',
 				names: ['Ruth', 'Olivia', 'Albert', 'Christine', 'Soso'],
 				message: 'Hello World'
@@ -40,7 +50,11 @@
 					this.names.push(this.newName);
 					// clear input
 					this.newName = '';
-				}
+				},
+
+                toggleClass(){
+                    this.isLoading=true ;
+                }
 
 			}
 		})		

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Exercise 7</title>
+	<meta name="description" content="The HTML5 Standard Template">
+	<meta name="author" content="Developer Name">
+	<!---->
+</head>
+
+<body>
+	<div id="root">
+
+			<h1 v-text="new Date() "> {{ message }} </h1>
+			<h1  > {{ reverseMessage }} </h1>
+			
+		<h1>All Tasks</h1>
+		<ul>
+			<li v-for="task in tasks" v-text="task.description"> </li>
+		</ul>
+
+		<h1>Completed Tasks</h1>
+		<ul>
+			<li v-for="task in tasks" v-if="task.completed" v-text="task.description"> </li>
+		</ul>
+
+		<h1>Incompleted Tasks</h1>
+		<ul>
+			<li v-for="task in uncompletedTasks"  v-text="task.description"> </li>
+		</ul>
+
+	</div>
+
+
+	<script src="vue.js"></script>
+	<script>
+
+		var app = new Vue({
+			el: '#root',
+			data: {
+ 
+				message: 'Hello World',
+				tasks: [ 
+				{ name:'Dart', description:'Do a Rich Internet Application', completed: false }, 
+				{ name:'Go', description:'Publish a desktop app', completed: true }, 
+				{ name:'Flutters', description:'Do a mobile App and Playstore', completed: false }, 
+				{ name:'Angualr', description:'Do a Project and upload', completed: true }, 
+				{ name:'React', description:'Install Commence React JS', completed: false }, 
+				{ name:'Vue', description:'Study Basics of Vue js', completed: true } 
+				]
+			}, 		
+				
+			methods: {
+ 
+
+			},
+
+			computed: {
+				reverseMessage(){
+					return this.message.split('').reverse().join('');
+				},
+
+				uncompletedTasks(){
+					return this.tasks.filter(task => !task.completed);
+				}
+			}
+		})		
+
+	</script>
+
+
+
+</body>
+
+</html>

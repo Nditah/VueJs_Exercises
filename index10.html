@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+	<meta name="description" content="The HTML5 Standard Template">
+	<meta name="author" content="Developer Name">
+    <!---->
+    <style type="text/css">
+    body{
+        padding-top:40px;
+    }
+    </style>
+</head>
+
+<body>
+        <div id="root" class="container">
+                
+            <modal  v-if="showModal" @close="showModal = false" >
+                <p> Vuejs is really cool </p> 
+            </modal>
+            <button @click=" showModal = true ">Show Modal </button>    
+        </div>
+
+
+	<script src="vue.js"></script>
+	<script src="main10.js"></script>
+    
+
+
+
+</body>
+
+</html>
